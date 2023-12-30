@@ -25,7 +25,10 @@ export const ActiveRequest: React.FC<ActiveRequestProps> = ({
   children,
 }) => {
   return (
-    <StyledCard className="space-y-6 overflow-hidden rounded-md  px-6 py-4">
+    <StyledCard
+      className="space-y-6 overflow-hidden rounded-md  px-6 py-4"
+      sx={{ flex: 1 }}
+    >
       <Box
         className={`${flexStyles.flexBetween} flex-col-reverse gap-5 sm:flex-row-reverse`}
       >

@@ -40,7 +40,7 @@ export const ChooseLocation: React.FC = () => {
   let selectedAddress: string | undefined = "طرشت";
   selectedAddress = FAKE_ADDRESS.find((item) => item.id === selected)?.address;
   return (
-    <Box className="bg-success ">
+    <Box>
       <Box>map</Box>
       {/* address list */}
       <Box className="my-5 space-y-7">

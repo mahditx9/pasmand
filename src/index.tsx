@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import { store } from "./redux/index";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );

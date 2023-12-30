@@ -1,36 +1,10 @@
-import { Box, Container, List } from "@mui/material";
-import { flexStyles } from "../../../globalStyles/styles";
-import { RecycleType } from "./DeterminationTypes";
-import { DeterminationItem } from "./DeterminationItem";
+import { Box, Container } from "@mui/material";
 import { StepActions } from "../components/StepActions";
-import { useSelector } from "react-redux";
-
-const FAKE_LIST: RecycleType[] = [
-  {
-    id: 1,
-    title: "پلاستیک",
-    weight: 32.0,
-    unitPrice: 3000,
-    totalPrice: 6000,
-  },
-  {
-    id: 2,
-    title: "پارچه",
-    weight: 32.0,
-    unitPrice: 2500,
-    totalPrice: 35154,
-  },
-  {
-    id: 3,
-    title: "شیشه",
-    weight: 32.0,
-    unitPrice: 63000,
-    totalPrice: 2365000,
-  },
-];
+import { Selectors } from "../../../redux";
+import { DeterMinationTable } from "./DeterMinationTable";
 
 export const Determination: React.FC = () => {
-  const { recyclesList } = useSelector((state: any) => state.request);
+  const { recyclesList } = Selectors.useRequestSelector();
   return (
     <Container maxWidth="md">
       <Box className="overflow-hidden">
@@ -40,11 +14,7 @@ export const Determination: React.FC = () => {
           alt="categories-banner"
         />
       </Box>
-      <List className={`${flexStyles.flexCenter} flex-col gap-6`}>
-        {recyclesList.map((item: RecycleType) => (
-          <DeterminationItem key={item.id} determination={item} />
-        ))}
-      </List>
+      <DeterMinationTable recyclesList={recyclesList} />
       <StepActions activeStep={3} nextRoute="/request/type" />
     </Container>
   );

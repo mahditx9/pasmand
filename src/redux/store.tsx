@@ -20,9 +20,10 @@ const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const store = configureStore({
+export const store = configureStore({
   reducer: persistedReducer,
   devTools: process.env.NODE_ENV !== "production", // Enable Redux DevTools in development
 });
 
-export default store;
+export type RootState = ReturnType<typeof rootReducer>;
+// export default store;

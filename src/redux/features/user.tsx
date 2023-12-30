@@ -1,13 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
+interface UserType {
+  firstName: string;
+  lastName: string;
+  password: string;
+  mobile: number;
+  createdAt: string;
+}
+
+interface InitialState {
+  userData: UserType[] | any;
+  loading: boolean;
+}
+
+const initialState: InitialState = {
+  userData: [],
+  loading: false,
+};
 
 export const userSlice = createSlice({
   name: "user",
-  initialState: {
-    userData: [],
-    loading: false,
-  },
+  initialState,
   reducers: {
-    getDataPanel: (state, action) => {
+    getDataPanel: (state, action: PayloadAction<UserType>) => {
       return { userData: action.payload, loading: true };
     },
 

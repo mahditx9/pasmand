@@ -1,4 +1,4 @@
-import { AppBar, Container, Toolbar } from "@mui/material";
+import { AppBar, Box, Container, Toolbar } from "@mui/material";
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 import BodyContent from "./BodyContent";
@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 
 const AppLayout = () => {
   return (
-    <>
+    <Box>
       <NavBar />
       <Container maxWidth="lg" className="flex gap-4 py-3">
         <BodyContent />
@@ -26,7 +26,7 @@ const AppLayout = () => {
           theme="light"
         ></ToastContainer>
       </Container>
-    </>
+    </Box>
   );
 };
 

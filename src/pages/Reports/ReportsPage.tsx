@@ -108,7 +108,7 @@ export const ReportsPage: React.FC = () => {
       />
       <Container
         maxWidth="xl"
-        sx={{ display: "flex", gap: "20px", justifyContent: "flex-end" }}
+        sx={{ display: "flex", gap: "20px", justifyContent: "space-evenly" }}
         className="flex flex-col flex-wrap sm:flex-row"
       >
         <ActiveRequest

@@ -27,13 +27,13 @@ export const ActiveStatus: React.FC<ActiveStatusProps> = ({
 
   return (
     <StyledCard
-      className={`flex flex-row-reverse items-center justify-center gap-3 px-3 py-1`}
+      className={`flex w-fit flex-row-reverse items-center justify-center gap-1 px-5 py-1`}
     >
       <Typography
         variant="body1"
-        className="text-textDark"
+        className="text-ellipsis whitespace-nowrap text-textDark"
         fontWeight={600}
-        fontSize={20}
+        fontSize={16}
         component="span"
       >
         {requestStatus === "unsubmitted" && "در انتظار تایید"}

@@ -5,8 +5,8 @@ import { CardCategory } from "./CardCategory";
 import { StepActions } from "../components/StepActions";
 import { Banner } from "../../../components/Banner";
 import { PageTitle } from "../../../components/PageTitle";
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
+import { Selectors } from "../../../redux";
 
 const FAKE_CATEGORIES: Category[] = [
   {
@@ -77,7 +77,8 @@ const FAKE_CATEGORIES: Category[] = [
 ];
 
 export const ChooseCategories: React.FC = () => {
-  const { recyclesList } = useSelector((state: any) => state.request);
+  const { recyclesList } = Selectors.useRequestSelector();
+
   const recycleListLength = recyclesList?.length;
   return (
     <Box className="space-y-3">

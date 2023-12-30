@@ -16,6 +16,13 @@ const CustomButton = styled(Button)({
   borderRadius: 16,
 });
 
+enum ButtonType {
+  error = "error",
+  success = "success",
+  info = "info",
+  warning = "warning",
+}
+
 export const StyledButton: React.FC<StyledButtonProps> = ({
   type,
   label,
@@ -24,7 +31,7 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
   sx,
 }) => {
   switch (type) {
-    case "error":
+    case ButtonType.error:
       return (
         <CustomButton
           className={`${Classes}`}
@@ -36,7 +43,7 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
           {label}
         </CustomButton>
       );
-    case "success":
+    case ButtonType.success:
       return (
         <CustomButton
           className={`${Classes}`}
@@ -48,7 +55,7 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
           {label}
         </CustomButton>
       );
-    case "info":
+    case ButtonType.info:
       return (
         <CustomButton
           className={`${Classes}`}
@@ -60,7 +67,7 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
           {label}
         </CustomButton>
       );
-    case "warning":
+    case ButtonType.warning:
       return (
         <CustomButton
           className={`${Classes}`}
