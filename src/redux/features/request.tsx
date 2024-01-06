@@ -20,7 +20,7 @@ const initialState: InitialState = {
   date: null,
   time: null,
 };
-  
+
 const requestSlice = createSlice({
   name: "request",
   initialState,

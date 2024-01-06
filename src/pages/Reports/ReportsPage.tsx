@@ -8,6 +8,7 @@ import { StyledButton } from "../../components/StyledButton";
 import { PageTitle } from "../../components/PageTitle";
 import { Search } from "@mui/icons-material";
 import React, { useState } from "react";
+import { SearchInput } from "../../components/SearchInput";
 
 const ShowDetailsButton = () => {
   return (
@@ -22,12 +23,6 @@ const ShowDetailsButton = () => {
 
 export const ReportsPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
-
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setSearchQuery(event.target.value);
-  };
 
   const handleClick = () => {};
 
@@ -60,46 +55,12 @@ export const ReportsPage: React.FC = () => {
       </Box>
       <Box className={`${flexStyles.flexCenter} flex-col gap-5`}>
         <PageTitle title="جستجو بر اساس کد رهگیری" fontSize={30} />
-        <Paper
-          dir="rtl"
-          component="form"
-          sx={{
-            // p: "2px 0px",
-            display: "flex",
-            alignItems: "center",
-            width: 400,
-          }}
-        >
-          <InputBase
-            sx={{ ml: 1, flex: 1, p: "2px 6px", color: "#4F4F4F" }}
-            placeholder="کد رهگیری را وارد کنید"
-            inputProps={{ "aria-label": "کد رهگیری را وارد کنید" }}
-            value={searchQuery}
-            onChange={handleChange}
-          />
-          <IconButton
-            type="button"
-            sx={{
-              color: "white",
-              p: "10px",
-              backgroundColor: "darkgreen",
-              borderBottomLeftRadius: 0,
-              borderTopLeftRadius: 0,
-              "&:hover": {
-                backgroundColor: "green",
-              },
-            }}
-            aria-label="search"
-            onClick={handleClick}
-          >
-            <Search
-              sx={{
-                fontSize: 30,
-                p: 0,
-              }}
-            />
-          </IconButton>
-        </Paper>
+        <SearchInput
+          placeHolder="کد رهگیری را وارد کنید"
+          searchValue={searchQuery}
+          setSearchValue={setSearchQuery}
+          handleClick={handleClick}
+        />
       </Box>
       <PageTitle
         fontSize={26}

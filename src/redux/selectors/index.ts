@@ -7,6 +7,12 @@ export const useRequestSelector = () => {
   return { recyclesList, address, date, requestType, time };
 };
 
+export const useMapSelector = () => {
+  const { address, error, latitude, loading, longitude, cities, selectedCity } =
+    useSelector((state) => state.map);
+  return { address, error, latitude, loading, longitude, cities, selectedCity };
+};
+
 export const useUserSelector = () => {
   const userSlice = useSelector((state) => state.user);
   return { userSlice };

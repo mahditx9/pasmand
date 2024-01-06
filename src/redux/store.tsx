@@ -5,6 +5,7 @@ import { persistReducer } from "redux-persist";
 
 import userReducer from "./features/user";
 import requestReducer from "./features/request";
+import mapReducer from "./features/map";
 
 // import logger from "redux-logger";
 const persistConfig = {
@@ -16,6 +17,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   user: userReducer,
   request: requestReducer,
+  map: mapReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -2,12 +2,17 @@ import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 import React from "react";
 
+// enum ButtonType{
+//   type=''
+// }
+
 interface StyledButtonProps {
   type: string;
   label: string;
   className?: string;
   onClickHandler?: () => any;
   sx?: any;
+  _type?: "button" | "reset" | "submit" | undefined;
 }
 
 const CustomButton = styled(Button)({
@@ -29,6 +34,7 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
   className: Classes,
   onClickHandler,
   sx,
+  _type,
 }) => {
   switch (type) {
     case ButtonType.error:
@@ -38,6 +44,7 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
           onClick={onClickHandler}
           color="error"
           sx={sx}
+          type={_type}
           variant="contained"
         >
           {label}

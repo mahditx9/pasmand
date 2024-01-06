@@ -7,6 +7,8 @@ import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme";
 import { Provider } from "react-redux";
 import { store } from "./redux/index";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
@@ -17,6 +19,18 @@ root.render(
         <App />
       </Provider>
     </ThemeProvider>
+    <ToastContainer
+      position="bottom-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+    />
   </React.StrictMode>,
 );
 

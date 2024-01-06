@@ -26,7 +26,7 @@ export const Register = () => {
         noValidate
         autoComplete="off"
       >
-        <Box className="flex items-center gap-5">
+        {/* <Box className="flex items-center gap-5">
           <TextField
             dir="rtl"
             className="text-end"
@@ -43,7 +43,7 @@ export const Register = () => {
             label="نام"
             placeholder="نام خود را وارد کنید"
           />
-        </Box>
+        </Box> */}
         <Box className="flex items-center gap-5">
           <TextField
             dir="rtl"
@@ -64,17 +64,17 @@ export const Register = () => {
           />
         </Box>
         <Box className="flex items-center gap-5">
-          <TextField
+          {/* <TextField
             dir="rtl"
             className="text-end"
             id="outlined-password-input"
             label="ایمیل"
             placeholder="ایمیل الکترونیکی خود را وارد کنید"
             type="email"
-          />
+          /> */}
           <TextField
             dir="rtl"
-            className="text-end"
+            className="flex-grow text-end"
             required
             id="outlined-password-input"
             label="شماره همراه"
